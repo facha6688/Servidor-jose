@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Servidor de JOSE</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://i.postimg.cc/x1HDRjL4/195fe57ffb2677ec46e1f21c8ba915be.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background-color: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    .container {
+      padding: 2rem;
+      min-height: 100vh;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin: 1rem 0;
+      border: 3px solid white;
+      background-image: url('https://i.postimg.cc/sxKbMvdM/2e67d812568d7ce6737b43c9cee8b602.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+      text-shadow: 0 0 5px black;
+    }
+
+    .button {
+      margin: 0.75rem auto;
+      padding: 1rem 2rem;
+      background-color: #e60000;
+      border: none;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 80%;
+      max-width: 300px;
+      transition: background-color 0.3s ease;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+    }
+
+    .button:hover {
+      background-color: #ff1a1a;
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #ddd;
+      text-shadow: 0 0 3px black;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="overlay" id="startScreen">Click</div>
+
+  <div class="container" id="mainContent">
+    <h1>Servidor De JOSE</h1>
+    <div class="avatar"></div>
+
+    <a href="https://discord.gg/MYMK6QmJ" target="_blank" class="button">DISCORD</a>
+
+    <button class="button">BLACKCLOVER</button>
+    <button class="button">BLACKCLOVER</button>
+    <button class="button">BLACKCLOVER</button>
+
+    <footer>&copy; BC. JUEGO MUERTO</footer>
+  </div>
+
+  <audio id="musica" loop>
+    <source src="https://cdn.discordapp.com/attachments/1350191973897732136/1372825955713679420/Black_Clover_Opening_1_-_Haruka_Mirai_default_1.mp3?ex=68282f4d&is=6826ddcd&hm=1c756bb9aabe56b1124dc1206d17a1eaf75752f49b55d27674b90acc94c998b1" type="audio/mpeg" />
+    Tu navegador no soporta el elemento de audio.
+  </audio>
+
+  <script>
+    document.getElementById('startScreen').addEventListener('click', () => {
+      document.getElementById('startScreen').style.display = 'none';
+      document.getElementById('mainContent').style.display = 'flex';
+      const musica = document.getElementById('musica');
+      musica.play().catch(e => console.log('Autoplay bloqueado:', e));
+    });
+  </script>
+</body>
+</html>
